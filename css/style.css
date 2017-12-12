@@ -1,0 +1,440 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding-top: 0;
+}
+
+:root {
+    --quicksand-font: 'Quicksand', sans-serif;
+    --garamond-font: 'EB Garamond', serif;
+    --lightgrey-color: #d2d2d2;
+}
+
+
+/*NAVBAR + BURGER MENU*/
+
+#m:checked~a {
+    display: block;
+}
+
+#m {
+    display: none;
+}
+
+label {
+    font-size: 2em;
+    margin-right: 5vw;
+    margin-bottom: 2vh;
+    color: var(--lightgrey-color);
+}
+
+#logo {
+    width: 50%;
+}
+
+.flex-menu {
+    font-family: var(--quicksand-font);
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+.flex-logo-menulabel {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.flex-right {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    width: 100vw;
+    height: 7em;
+}
+
+.nav a {
+    text-align: right;
+    display: none;
+    padding: 2em;
+    font-size: 1.2em;
+}
+
+.nav a:hover{
+    color: orange;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: var(--lightgrey-color);
+    text-decoration: none;
+}
+
+.active-page {
+    border-bottom: 2px solid brown;
+    width: 100%;
+    border-bottom-width: 70%;
+}
+
+
+/*END OF NAVIGATION*/
+
+
+
+/*SOCIAL MEDIA LINKS*/
+
+.social-media{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.social-media div{
+    border: 1px solid white;
+}
+
+.social-media div img{
+    width: 100%;
+}
+
+
+
+#background-image-index {
+    width: 100vw;
+    height: 100vh;
+/*    overflow: hidden;*/
+    background-image: url(../img/guitar.jpeg);
+    background-size: cover;
+}
+
+.background-image-about{
+     width: 100vw;
+    height: 100vh;
+/*    overflow: hidden;*/
+    background-image: url(../img/concert.jpg);
+    background-size: cover;
+}
+
+.front-page-video {
+    display: grid;
+    text-transform: uppercase;
+    color: var(--lightgrey-color);
+    font-size: 1.5em;
+}
+
+#youtube-div {
+    width: 10%;
+}
+
+#youtube-logo {
+    width: 100%;
+}
+
+.front-page-video p:nth-child(1) {
+    font-family: var(--quicksand-font);
+}
+
+.front-page-video p:nth-child(2) {
+    font-family: var(--garamond-font);
+    font-size: 1.4em;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.front-page-youtube-button {
+    display: flex;
+    align-items: center;
+    border: 2px solid brown;
+}
+
+#front-page-button-text {
+    font-family: var(--quicksand-font);
+    text-transform: uppercase;
+    flex-grow: 1;
+}
+
+
+/*END OF FIRST PAGE*/
+
+
+
+
+
+/*MUSIC PAGE*/
+
+.background-image-no-guitar {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/background-no-guitar.png);
+    background-size: cover;
+}
+
+#main-music {
+    width: 30%;
+    margin: 0 auto;
+    height: 100px;
+}
+
+#main-music iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#album-music {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#album-img {
+    width: 80%;
+}
+
+
+
+/*CONCERTS PAGE*/
+
+article.concert{
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    background-color: pink;
+    border: 1px solid black;
+}
+
+
+/*ABOUT PAGE*/
+
+.first-box-about div img, .second-box-about div img, .third-box-about div img{
+    width: 60%;
+    margin: 30% 20% 20% 20%;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.arrow {
+  bottom: 5%;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+.title-about{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 50vh;
+}
+
+.title-about div{
+    border: 1px solid red;
+    margin: 0 auto;
+}
+
+.about-text{
+    width: 70%;
+    margin: 0 auto;
+}
+
+/*CONTACT PAGE*/
+
+#myBtn{
+    color: white;
+    cursor: pointer;
+}
+
+#myBtn:hover{
+    color: orange;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    padding-top: 50px;
+    width: 100vw;
+    /* Full width */
+    height: 100vh;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+.modal-content-contact {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "contact contact" "first-name last-name" "email email" "subject subject" "msg msg" "submit .";
+    background-color: rgba(0,0,0,0.6);
+    margin: auto;
+    padding: 20px;
+    /* border: 1px solid #888; */
+    /* width: 90%; */
+    color: #fefefe;
+}
+
+.modal-content-contact input{
+    width: 100%;
+}
+
+#contact-title {
+    grid-area: contact;
+}
+
+#first-name {
+    grid-area: first-name;
+}
+
+#last-name {
+    grid-area: last-name;
+}
+
+#email-input {
+    grid-area: email;
+}
+
+#submit-button {
+    grid-area: submit;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    grid-area: x-area;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+ ::-webkit-input-placeholder {
+    color: pink;
+    font-family: monospace;
+}
+
+
+/*DESKTOP MEDIA SCREEN QUERY*/
+
+@media screen and (min-width: 640px) {
+    .navbar {
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+    }
+    .navbar a {
+        display: block;
+    }
+    label {
+        display: none;
+    }
+    #logo {
+        width: 50%;
+    }
+    .flex-menu {
+        flex-direction: row;
+        margin-right: 3vw;
+        letter-spacing: 1px;
+    }
+    .front-page-video-desktop {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        width: 30vw;
+        height: 20vh;
+        margin-top: 50vh;
+        margin-left: 5vw;
+    }
+
+    /*ABOUT PAGE*/
+
+    .buttons-about{
+        grid-area: buttons;
+    }
+
+    .first-box-about{
+        width: 100vw;
+        height: 100vh;
+        background-color: pink;
+    }
+
+    .main-about-box{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        height: 100vh;
+        margin: 0 auto;
+    }
+
+    .main-about-box-desktop div{
+        border: 2px solid red;
+        width: 50%;
+    }
+    .main-about-box-desktop div img{
+        display: block;
+    }
+    .main-about-box-desktop .about-text{
+        width: 50%;
+        margin: 40% 20% 20% 20%;
+    }
+
+    #title-about-desktop{
+        margin-top: 55vh;
+    }
+
+    #main-about .main-about-box-desktop div img{
+        margin: 35% 20% 20% 20%;
+
+    }
+
+    /*CONTACT MODAL*/
+
+    #modal-content-contact-desktop{
+        width: 70%;
+    }
+
+}

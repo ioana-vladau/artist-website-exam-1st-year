@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#c4a071">
+    <link rel="icon" sizes="192x192" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
+    <title>Concerts</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="flex-menu">
+        <div class="flex-logo-menulabel">
+            <label for="m">&#9776;</label>
+            <a href="index.html"><img id="logo" src="img/logo.png"></a>
+        </div>
+        <nav class="nav navbar">
+            <input type="checkbox" id="m">
+            <a href="music.html">Music</a>
+            <a href="https://www.youtube.com/user/VonFriedeman">Videos</a>
+            <a href="concerts.html" class="active-page">Concerts</a>
+            <a href="about.html">About</a>
+            <a id="myBtn">Contact</a>
+        </nav>
+    </div>
+
+
+
+  <h1>Upcoming Shows</h1>
+   <section id="list">
+
+   </section>
+
+
+   <template id="concertTemplate">
+       <article class="concert">
+           <div class="day"></div>
+           <div class="month"></div>
+           <div class="year"></div>
+           <p class="venue"></p>
+           <p class="location">Location</p>
+           <p class="city-country">Location</p>
+<!--           <img class="venue-photo" src="" alt="">-->
+       </article>
+   </template>
+
+               <!--MODAL FOR BIZ INQUIRiES-->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+<!--             Modal content -->
+            <div class="modal-content-contact" id="modal-content-contact-desktop">
+                <p id="contact-title">Contact<span class="close">&times;</span></p>
+                <input type="text" id="first-name" placeholder="   First Name" required>
+                <input type="text" id="last-name" placeholder="   Last Name" required>
+                <input type="email" id="email-input" placeholder="   Email address" required>
+                <textarea id="textarea-contact" placeholder="   Message" name="message-text"></textarea>
+                <input type="button" id="submit-button" value="Submit">
+            </div>
+
+        </div>
+
+
+<script src="js/main.js"></script>
+<script src="js/main2.js"></script>
+</body>
+
+</html>

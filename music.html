@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#c4a071">
+    <link rel="icon" sizes="192x192" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
+    <title>Music</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="background-image-no-guitar">
+        <header class="flex-menu">
+            <div class="flex-logo-menulabel">
+                <label for="m">&#9776;</label>
+                <a href="index.html"><img id="logo" src="img/logo.png"></a>
+            </div>
+            <nav class="nav navbar">
+                <input type="checkbox" id="m">
+                <a href="music.html" class="active-page">Music</a>
+                <a href="https://www.youtube.com/user/VonFriedeman">Videos</a>
+                <a href="concerts.html">Concerts</a>
+                <a href="about.html">About</a>
+                <a id="myBtn">Contact</a>
+            </nav>
+        </header>
+
+        <main id="main-music">
+            <div id="album-music">
+                <div>
+                    <img id="album-img" src="img/towhomitmayconcern.jpg">
+                </div>
+                <div>
+                   <p>2017</p>
+                    <p>To Whom It May Concern EP</p>
+                </div>
+            </div>
+            <iframe src="https://open.spotify.com/embed/album/0HmvC1k4TI6G1TgAvxlOSK" frameborder="0" allowtransparency="true"></iframe>
+
+
+        </main>
+
+        <div class="social-media">
+            <div><img src="img/social-media/facebook.png"></div>
+            <div><img src="img/social-media/instagram.png"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+    </div>
+
+
+             <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content-contact" id="modal-content-contact-desktop">
+                <p id="contact-title">Contact<span class="close">&times;</span></p>
+                <input type="text" id="first-name" placeholder="   First Name" required>
+                <input type="text" id="last-name" placeholder="   Last Name" required>
+                <input type="email" id="email-input" placeholder="   Email address" required>
+                <textarea id="textarea-contact" placeholder="   Message" name="message-text"></textarea>
+                <input type="button" id="submit-button" value="Submit">
+            </div>
+        </div>
+
+
+    <script src="js/main2.js"></script>
+</body>
+
+</html>
