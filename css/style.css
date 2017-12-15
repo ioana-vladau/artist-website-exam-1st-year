@@ -8,12 +8,26 @@
     --quicksand-font: 'Quicksand', sans-serif;
     --garamond-font: 'EB Garamond', serif;
     --lightgrey-color: #d2d2d2;
+    --brown-accent-color: #bd9e6e;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+@font-face {
+    font-family: goodNightFont;
+    src: url(../fonts/Good-night.ttf);
 }
 
 
 /*NAVBAR + BURGER MENU*/
 
-#m:checked~a {
+.opacity {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+#m:checked~div {
     display: block;
 }
 
@@ -22,6 +36,7 @@
 }
 
 label {
+    z-index: 10;
     font-size: 2em;
     margin-right: 5vw;
     margin-bottom: 2vh;
@@ -30,6 +45,7 @@ label {
 
 #logo {
     width: 50%;
+    /*    z-index: 10;*/
 }
 
 .flex-menu {
@@ -41,13 +57,22 @@ label {
 
 .flex-logo-menulabel {
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
 }
 
 .flex-right {
     display: flex;
     flex-direction: row;
+}
+
+.coverbackground {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav {
@@ -58,15 +83,24 @@ label {
     height: 7em;
 }
 
-.nav a {
-    text-align: right;
+.nav #dropdown {
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 100vh;
     display: none;
+    z-index: 10;
+}
+
+.nav #dropdown a {
+    display: block;
+    z-index: 10;
+    /*    text-align: right;*/
+    text-align: center;
     padding: 2em;
     font-size: 1.2em;
 }
 
-.nav a:hover{
-    color: orange;
+.nav a:hover {
+    color: var(--brown-accent-color);
 }
 
 a:link,
@@ -78,48 +112,37 @@ a:active {
 }
 
 .active-page {
-    border-bottom: 2px solid brown;
-    width: 100%;
-    border-bottom-width: 70%;
+    border-bottom: 1px solid var(--brown-accent-color);
 }
 
 
 /*END OF NAVIGATION*/
 
-
-
-/*SOCIAL MEDIA LINKS*/
-
-.social-media{
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    grid-gap: 5px;
-}
-
-.social-media div{
-    border: 1px solid white;
-}
-
-.social-media div img{
-    width: 100%;
+.hidden {
+    display: none;
 }
 
 
+/*FRONT PAGE*/
 
-#background-image-index {
+.background-image {
     width: 100vw;
     height: 100vh;
-/*    overflow: hidden;*/
-    background-image: url(../img/guitar.jpeg);
     background-size: cover;
 }
 
-.background-image-about{
-     width: 100vw;
+.background-image-index {
+    width: 100vw;
     height: 100vh;
-/*    overflow: hidden;*/
-    background-image: url(../img/concert.jpg);
+    /*    overflow: hidden;*/
+    background-image: url(../img/background-img/guitar-mobile2.png);
     background-size: cover;
+}
+
+.background-image-concerts {
+    background-image: url(../img/background-img/concert3mobil.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw;
 }
 
 .front-page-video {
@@ -127,6 +150,7 @@ a:active {
     text-transform: uppercase;
     color: var(--lightgrey-color);
     font-size: 1.5em;
+    text-align: center;
 }
 
 #youtube-div {
@@ -139,11 +163,12 @@ a:active {
 
 .front-page-video p:nth-child(1) {
     font-family: var(--quicksand-font);
+    font-size: 0.8em;
 }
 
 .front-page-video p:nth-child(2) {
     font-family: var(--garamond-font);
-    font-size: 1.4em;
+    font-size: 2em;
     font-weight: 600;
     letter-spacing: 2px;
 }
@@ -151,7 +176,7 @@ a:active {
 .front-page-youtube-button {
     display: flex;
     align-items: center;
-    border: 2px solid brown;
+    border: 1px solid var(--brown-accent-color);
 }
 
 #front-page-button-text {
@@ -160,124 +185,341 @@ a:active {
     flex-grow: 1;
 }
 
+i#index-i {
+    padding: 3.5%;
+    font-size: 1.2em;
+}
+
 
 /*END OF FIRST PAGE*/
 
 
-
-
-
 /*MUSIC PAGE*/
 
-.background-image-no-guitar {
+.background-image-music {
     width: 100vw;
     height: 100vh;
-    background-image: url(../img/background-no-guitar.png);
+    background-image: url(../img/background-img/manwithguitar3.png);
     background-size: cover;
 }
 
-#main-music {
-    width: 30%;
-    margin: 0 auto;
-    height: 100px;
-}
-
-#main-music iframe {
+iframe {
+    height: 150px;
     width: 100%;
-    height: 100%;
 }
 
-#album-music {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.album-playlist {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
 }
 
-#album-img {
-    width: 80%;
+#main-music .about-text {
+    width: 50%;
+    margin: 0 auto;
 }
 
+#album-1 {
+    width: 100%;
+    margin-top: 150px;
+}
+
+.lyrics {
+    margin: 0;
+}
+
+#list-music {
+    margin-bottom: 80px;
+    text-align: center;
+}
 
 
 /*CONCERTS PAGE*/
 
-article.concert{
+article.concert {
+    /*
     display: grid;
-    width: 70%;
+    grid-template-columns: repeat(5, 1fr);
+
+*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "day venue details-btn" "day city details-btn" ". . details";
     margin: 0 auto;
-    background-color: pink;
-    border: 1px solid black;
+}
+
+.concert-details-button {
+    color: var(--brown-accent-color);
+    grid-area: details-btn;
+    text-align: right;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.concert-details-button:hover {
+    color: var(--brown-accent-color);
+}
+
+.details {
+    grid-area: details;
+    text-align: right;
+    font-style: oblique;
+    font-family: var(--quicksand-font);
+    color: black;
+    margin-top: -10%;
+    font-size: 0.8em;
+    /*    border-bottom: 1px solid var(--brown-accent-color);*/
+}
+
+.day {
+    grid-area: day;
+    font-size: 2.1em;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.month {
+    text-transform: uppercase;
+    grid-area: month;
+    font-weight: bold;
+}
+
+.year {
+    grid-area: year;
+    font-size: 0.8em;
+}
+
+.venue {
+    justify-content: center;
+    grid-area: venue;
+}
+
+.city {
+    grid-area: city;
+    margin-top: -10px;
+}
+
+.city-country {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: city-country;
+}
+
+.price {
+    grid-area: price;
+}
+
+article.concert {
+    color: #2a3335;
+    margin-bottom: 50px;
+    font-family: var(--garamond-font);
+}
+
+#list {
+    margin-top: 120px;
+}
+
+.price-free {
+    color: green;
+}
+
+a.empty-p {
+    color: green;
+}
+
+.concerts-h1 {
+    text-align: center;
+    margin-top: 10%;
+    font-family: var(--garamond-font);
+    font-size: 3em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brown-accent-color);
+    font-weight: bold;
+}
+
+#concerts-content {
+    width: 80vw;
+    margin: 0 auto;
+    font-size: 1em;
+    margin-bottom: 100px;
+}
+
+.day,
+.month,
+.year {
+    font-family: var(--quicksand-font);
+}
+
+#date {
+    display: flex;
+    flex-direction: row;
+}
+
+div#date {
+    margin: 0 5% 0 5%;
+}
+
+.venue,
+.city-country,
+.price {
+    font-family: var(--garamond-font);
+}
+
+.line-after-date {
+    width: 2px;
+    height: 40px;
+    background-color: var(--brown-accent-color);
+    margin-left: 10px;
 }
 
 
 /*ABOUT PAGE*/
 
-.first-box-about div img, .second-box-about div img, .third-box-about div img{
-    width: 60%;
-    margin: 30% 20% 20% 20%;
+
+    .background-image-about{
+        background-image: url(../img/background-img/background-no-guitar.png);
+        width: 100vw;
+        height: 100vh;
+        background-size: ;
+        background-repeat: no-repeat;
+    }
+
+.main-about-box {
+    /*
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+*/
+    margin-bottom: 60px;
+}
+
+#about-child-guitar,
+#about-child-2nd,
+#about-jonas-now {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 15%;
+    width: 40%;
+}
+
+.main-text {
+    font-size: 3em;
+    margin-top: 0;
+    width: 100%;
+    font-family: var(--quicksand-font);
+    color: var(--lightgrey-color);
+    text-align: center;
+
+}
+
+.fa-chevron-down{
+    margin-top: 120px;
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-  60% {
-    -moz-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -moz-transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    60% {
+        -moz-transform: translateY(-15px);
+        -ms-transform: translateY(-15px);
+        -webkit-transform: translateY(-15px);
+        transform: translateY(-15px);
+    }
 }
 
 .arrow {
-  bottom: 5%;
-  left: 50%;
-  margin-left: -20px;
-  width: 40px;
-  height: 40px;
+    bottom: 5%;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: var(--lightgrey-color);
+}
+
+.arrow:hover {
+    color: wheat;
 }
 
 .bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 4s infinite;
 }
 
-.title-about{
+.title-about {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    width: 40%;
-    margin: 0 auto;
-    margin-top: 50vh;
-}
-
-.title-about div{
-    border: 1px solid red;
+    width: 60%;
     margin: 0 auto;
 }
 
-.about-text{
+.title-about div {
+    margin: 0 auto;
+}
+
+.about-text {
     width: 70%;
     margin: 0 auto;
+    font-family: var(--quicksand-font);
+    font-weight: 400;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    line-height: 35px;
 }
+
+.about-text p:first-letter {
+    float: left;
+    font-size: 3.5em;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+    font-family: var(--garamond-font);
+    text-shadow: var(--lightgrey-color) -1px 0, var(--lightgrey-color) 0 -1px, var(--lightgrey-color) 0 1px, var(--lightgrey-color) -1px -2px;
+}
+
+#about-h1-1st-title {
+    font-family: var(--garamond-font);
+    margin-top: 40px;
+    font-size: 3em;
+}
+
+.h1-h3 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-text span {
+    font-size: 1.2em;
+}
+
 
 /*CONTACT PAGE*/
 
-#myBtn{
+#myBtn {
     color: white;
     cursor: pointer;
 }
 
-#myBtn:hover{
-    color: orange;
+#myBtn:hover {
+    color: var(--brown-accent-color);
 }
 
 .modal {
@@ -285,7 +527,7 @@ article.concert{
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 12;
     /* Sit on top */
     left: 0;
     top: 0;
@@ -304,23 +546,75 @@ article.concert{
 
 .modal-content-contact {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "contact contact" "first-name last-name" "email email" "subject subject" "msg msg" "submit .";
-    background-color: rgba(0,0,0,0.6);
+    grid-template-areas: "contact contact" "name-legend name-legend" "first-name last-name" "firstname-legend lastname-legend" "email-legend email-legend" "email email" "subject-legend subject-legend" "subject subject" "msg-legend msg-legend" "msg msg" "submit .";
+    background-color: rgba(0, 0, 0, 0.6);
     margin: auto;
     padding: 20px;
     /* border: 1px solid #888; */
-    /* width: 90%; */
+    width: 95%;
     color: #fefefe;
+    font-family: var(--quicksand-font);
 }
 
-.modal-content-contact input{
+ .legend{
+    margin-top: 30px;
+}
+
+#first-name-legend,
+#last-name-legend {
+    color: darkgrey;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font-size: 1.2em;
+    font-style: italic;
+    font-family: var(--quicksand-font);
+}
+
+#name-legend {
+    grid-area: name-legend;
+}
+
+#email-legend {
+    grid-area: email-legend;
+}
+
+#subject-input {
+    grid-area: subject;
+}
+
+#message {
+    grid-area: msg;
+}
+
+#subject-legend {
+    grid-area: subject-legend;
+}
+
+#message-legend {
+    grid-area: msg-legend;
+}
+
+#first-name-legend {
+    grid-area: firstname-legend;
+}
+
+#last-name-legend {
+    grid-area: lastname-legend;
+}
+
+.modal-content-contact input {
     width: 100%;
 }
 
 #contact-title {
     grid-area: contact;
+    font-family: var(--garamond-font);
+    font-size: 2.2em;
 }
 
 #first-name {
@@ -337,6 +631,13 @@ article.concert{
 
 #submit-button {
     grid-area: submit;
+    margin-top: 40px;
+    padding: 5%;
+    background-color: black;
+    color: var(--lightgrey-color);
+    font-family: var(--quicksand-font);
+    font-size: 1.1em;
+    width: 50%;
 }
 
 .close {
@@ -354,27 +655,59 @@ article.concert{
     cursor: pointer;
 }
 
- ::-webkit-input-placeholder {
-    color: pink;
-    font-family: monospace;
+footer {
+    background-color: #242526;
+}
+
+.footer-social-icons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 80%;
+    margin: 0 auto;
+    font-size: 2em;
+}
+
+#footer {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: #b5b8bc;
+    font-family: var(--quicksand-font);
+}
+
+#footer img {
+    width: 40%;
+    margin: 0 auto;
 }
 
 
 /*DESKTOP MEDIA SCREEN QUERY*/
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
     .navbar {
-        grid-template-columns: repeat(5, 1fr);
         align-items: center;
     }
-    .navbar a {
+    .nav #dropdown {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0);
+        height: auto;
+        justify-content: flex-end;
+    }
+    .nav #dropdown a {
+        display: block;
+        /*        flex: 1;*/
+        text-align: center;
+    }
+    #dropdown {
         display: block;
     }
     label {
         display: none;
     }
     #logo {
-        width: 50%;
+        width: 17em;
     }
     .flex-menu {
         flex-direction: row;
@@ -384,57 +717,143 @@ article.concert{
     .front-page-video-desktop {
         display: grid;
         grid-template-rows: repeat(3, 1fr);
-        width: 30vw;
+        grid-row-gap: 5%;
+        width: 35vw;
         height: 20vh;
         margin-top: 50vh;
         margin-left: 5vw;
+        text-align: left;
+    }
+    #front-page-youtube-button-desktop:hover {
+        font-size: 1.020em;
+    }
+    .front-page-youtube-button {
+        margin-right: 26%;
+    }
+    #background-image-index-desktop {
+        background-image: url(../img/background-img/guitar.jpeg);
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
     }
 
-    /*ABOUT PAGE*/
 
-    .buttons-about{
+    #background-image-concerts-desktop
+    {
+        background-image: url(../img/background-img/concert3.jpg);
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+    }
+
+    /*ABOUT PAGE DESKTOP*/
+    .buttons-about {
         grid-area: buttons;
     }
 
-    .first-box-about{
-        width: 100vw;
-        height: 100vh;
-        background-color: pink;
+
+    #main-text-desktop {
+        margin-top: -5vh;
+        font-style: italic;
+        font-size: 2.6em;
+        margin-bottom: 30px;
     }
 
-    .main-about-box{
+    .fa-chevron-down{
+        margin-top: 20vh;
+    }
+
+    .main-about-box {
         display: flex;
         flex-direction: row;
         width: 80%;
-        height: 100vh;
+        height: 110vh;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+    .main-about-box-desktop div {
+        width: 50%;
         margin: 0 auto;
     }
-
-    .main-about-box-desktop div{
-        border: 2px solid red;
-        width: 50%;
-    }
-    .main-about-box-desktop div img{
+    .main-about-box-desktop div img {
         display: block;
     }
-    .main-about-box-desktop .about-text{
+    .main-about-box-desktop .about-text {
+        width: 88%;
+        margin-top: 15%;
+    }
+    #title-desktop {
+        margin-top: 40vh;
+    }
+    #about-child-guitar,
+    #about-jonas-now {
+        width: 80%;
+        margin-left: 10%;
+    }
+    #about-child-2nd {
+        width: 80%;
+    }
+    #about-child-guitar,
+    #about-jonas-now,
+    #about-child-2nd {
+        margin-top: 15%;
+    }
+    /*MUSIC PAGE DESKTOP*/
+    .album-playlist {
         width: 50%;
-        margin: 40% 20% 20% 20%;
+        margin: 0 auto;
     }
-
-    #title-about-desktop{
-        margin-top: 55vh;
+    /*CONCERTS PAGE DESKTOP*/
+    #concerts-content {
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 100px;
     }
-
-    #main-about .main-about-box-desktop div img{
-        margin: 35% 20% 20% 20%;
-
+    div.month-year {
+        margin: 0 10% 0 10%;
     }
-
-    /*CONTACT MODAL*/
-
-    #modal-content-contact-desktop{
-        width: 70%;
+    article#concert-desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "day venue city details-btn" ". . . details";
+        margin: 0 auto;
     }
-
+    article#concert-desktop {
+        margin-bottom: 20px;
+        font-size: 1.3em;
+    }
+    #date-desktop {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+    }
+    #venue-desktop {
+        flex-grow: 3;
+        justify-content: center;
+    }
+    #city-country-desktop {
+        flex-grow: 2;
+    }
+    #price-desktop {
+        flex-grow: 1;
+    }
+    #day-desktop {
+        font-size: 2.1em;
+        letter-spacing: 2px;
+    }
+    div#date-desktop {
+        margin: 0 5% 0 5%;
+    }
+    .city {
+        margin: 0;
+    }
+    /*CONTACT MODAL DESKTOP*/
+    #modal-content-contact-desktop {
+        width: 40%;
+    }
+    /*FOOTER*/
+    #footer {
+        width: 40%;
+    }
 }

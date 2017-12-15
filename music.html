@@ -4,45 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#c4a071">
+    <meta name="theme-color" content="#bd9e6e">
     <link rel="icon" sizes="192x192" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
+    <script src="https://use.fontawesome.com/86d6dc3846.js"></script>
     <title>Music</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="background-image-no-guitar">
+<body onload="initElement();">
+    <div class="background-image background-image-music">
         <header class="flex-menu">
             <div class="flex-logo-menulabel">
-                <label for="m">&#9776;</label>
                 <a href="index.html"><img id="logo" src="img/logo.png"></a>
+                <label for="m">&#9776;</label>
+
             </div>
             <nav class="nav navbar">
                 <input type="checkbox" id="m">
-                <a href="music.html" class="active-page">Music</a>
-                <a href="https://www.youtube.com/user/VonFriedeman">Videos</a>
-                <a href="concerts.html">Concerts</a>
-                <a href="about.html">About</a>
-                <a id="myBtn">Contact</a>
+                <div id="dropdown">
+                    <!--                    <div class="coverbackground"></div>-->
+                    <a href="music.html" class="active-page">Music</a>
+                    <a href="https://www.youtube.com/user/VonFriedeman" target="_blank">Videos</a>
+                    <a href="concerts.html">Concerts</a>
+                    <a href="about.html">About</a>
+                    <a id="myBtn">Contact</a>
+                </div>
             </nav>
         </header>
 
-        <main id="main-music">
-            <div id="album-music">
-                <div>
-                    <img id="album-img" src="img/towhomitmayconcern.jpg">
-                </div>
-                <div>
-                   <p>2017</p>
-                    <p>To Whom It May Concern EP</p>
-                </div>
+        <div class="title-about" id="title-desktop">
+            <div>
+                <p class="main-text" id="main-text-desktop">What do I sing?</p>
             </div>
-            <iframe src="https://open.spotify.com/embed/album/0HmvC1k4TI6G1TgAvxlOSK" frameborder="0" allowtransparency="true"></iframe>
+            <div class="arrow bounce">
+                <i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
+            </div>
+        </div>
 
 
-        </main>
+    </div>
 
+
+    <main id="main-music" class="scroll-here">
+        <div class="album-playlist" id="album-playlist-desktop">
+            <div><img id="album-1" src="img/towhomitmayconcern.jpg"></div>
+            <div><iframe src="https://open.spotify.com/embed/album/0HmvC1k4TI6G1TgAvxlOSK" width="300" height="380" frameborder="0" allowtransparency="true"></iframe></div>
+        </div>
+        <div class="about-text">
+
+            <section id="list-music">
+            </section>
+
+            <template id="songsTemplate">
+                       <article class="song" id="song-desktop">
+                        <h1 class="song-title"></h1>
+                          <button class="lyrics-button expandable">Lyrics <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+                          <div class="hidden lyrics"></div>
+                <!--        <div class="hidden l1 lyrics"></div>-->
+                <!--           <img class="venue-photo" src="" alt="">-->
+                       </article>
+                   </template>
+        </div>
+    </main>
+
+    <!--
         <div class="social-media">
             <div><img src="img/social-media/facebook.png"></div>
             <div><img src="img/social-media/instagram.png"></div>
@@ -51,23 +77,59 @@
             <div></div>
             <div></div>
         </div>
+-->
 
-    </div>
 
+    <!-- MODAL FOR CONTACT -->
 
-             <div id="myModal" class="modal">
+        <div id="myModal" class="modal">
             <!-- Modal content -->
-            <div class="modal-content-contact" id="modal-content-contact-desktop">
+            <form class="modal-content-contact" id="modal-content-contact-desktop">
                 <p id="contact-title">Contact<span class="close">&times;</span></p>
-                <input type="text" id="first-name" placeholder="   First Name" required>
-                <input type="text" id="last-name" placeholder="   Last Name" required>
-                <input type="email" id="email-input" placeholder="   Email address" required>
-                <textarea id="textarea-contact" placeholder="   Message" name="message-text"></textarea>
+
+                <p id="name-legend" class="legend">Name*</p>
+                <input type="text" id="first-name" required>
+                <input type="text" id="last-name" required>
+
+                <p id="first-name-legend" class="legend">First Name</p>
+                <p id="last-name-legend" class="legend">Last Name</p>
+
+                <p id="email-legend" class="legend">E-mail Address*</p>
+                <input type="email" id="email-input" required>
+
+                <p id="subject-legend" class="legend">Subject*</p>
+                <input type="text" id="subject-input" required>
+
+                <p id="message-legend" class="legend">Message*</p>
+                <textarea id="message" name="message-text" required></textarea>
+
                 <input type="button" id="submit-button" value="Submit">
-            </div>
+
+            </form>
         </div>
 
+    <footer>
+        <div id="footer">
+            <img src="img/logo.png">
+            <div class="footer-social-icons">
+                <div><a href="https://www.facebook.com/jonasfmenke/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://www.instagram.com/jonasfmenke/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://www.youtube.com/user/VonFriedeman" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://open.spotify.com/artist/3Tn4HDV6T6jlgARWd8JupQ" target="_blank"><i class="fa fa-spotify" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://itunes.apple.com/us/artist/jonas-f-menke/1086090753" target="_blank"><i class="fa fa-apple" aria-hidden="true"></i>
 
+
+
+                </a></div>
+            </div>
+            <p>Copyright KEA MMD, 2017</p>
+        </div>
+    </footer>
+    <script src="js/main3.js"></script>
     <script src="js/main2.js"></script>
 </body>
 

@@ -4,69 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#c4a071">
+    <meta name="theme-color" content="#bd9e6e">
     <link rel="icon" sizes="192x192" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
+    <script src="https://use.fontawesome.com/86d6dc3846.js"></script>
     <title>Concerts</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <div class="flex-menu">
-        <div class="flex-logo-menulabel">
-            <label for="m">&#9776;</label>
-            <a href="index.html"><img id="logo" src="img/logo.png"></a>
+    <div class="background-image background-image-concerts" id="background-image-concerts-desktop">
+      <header class="flex-menu">
+            <div class="flex-logo-menulabel">
+                <a href="index.html"><img id="logo" src="img/logo.png"></a>
+                <label for="m">&#9776;</label>
+
+            </div>
+            <nav class="nav navbar">
+                <input type="checkbox" id="m">
+                <div id="dropdown">
+                    <!--                    <div class="coverbackground"></div>-->
+                    <a href="music.html">Music</a>
+                    <a href="https://www.youtube.com/user/VonFriedeman" target="_blank">Videos</a>
+                    <a href="concerts.html" class="active-page">Concerts</a>
+                    <a href="about.html" >About</a>
+                    <a id="myBtn">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+
+        <div class="title-about" id="title-desktop">
+            <div>
+                <p class="main-text" id="main-text-desktop">When do I have shows?</p>
+            </div>
+            <div class="arrow arrow-concerts bounce">
+                <i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
+            </div>
         </div>
-        <nav class="nav navbar">
-            <input type="checkbox" id="m">
-            <a href="music.html">Music</a>
-            <a href="https://www.youtube.com/user/VonFriedeman">Videos</a>
-            <a href="concerts.html" class="active-page">Concerts</a>
-            <a href="about.html">About</a>
-            <a id="myBtn">Contact</a>
-        </nav>
     </div>
 
 
+    <div id="concerts-content">
+        <h1 class="concerts-h1 scroll-here">Upcoming Shows</h1>
 
-  <h1>Upcoming Shows</h1>
-   <section id="list">
+        <section id="list">
+        </section>
 
-   </section>
+        <template id="concertTemplate">
+       <article class="concert" id="concert-desktop">
+          <div id="date">
+               <div class="day" id="day-desktop"></div>
+               <div class="month-year">
+                   <div class="month"></div>
+                   <div class="year"></div>
+               </div><hr class="line-after-date" id="line-after-date-desktop">
+           </div>
+           <div class="venue" id="venue-desktop"></div>
+               <div class="city"></div>
+               <div class="country"></div>
+               <div class="price"></div>
+<!--
+           <p class="price" id="price-desktop">
+           </p>
+-->
+           <p class="concert-details-button expandable">Details  &nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+</p>
+           <div class="hidden details">
+               <p class="start-time">Starts at: <span></span></p>
+               <p class="price-p">Price: <span></span> DKK</p>
+               <p class="price-free"></p>
+               <a class="empty-p"></a>
+           </div>
 
-
-   <template id="concertTemplate">
-       <article class="concert">
-           <div class="day"></div>
-           <div class="month"></div>
-           <div class="year"></div>
-           <p class="venue"></p>
-           <p class="location">Location</p>
-           <p class="city-country">Location</p>
 <!--           <img class="venue-photo" src="" alt="">-->
        </article>
    </template>
 
-               <!--MODAL FOR BIZ INQUIRiES-->
+    </div>
 
-        <!-- The Modal -->
+
+    <!-- MODAL FOR CONTACT -->
+
         <div id="myModal" class="modal">
-<!--             Modal content -->
-            <div class="modal-content-contact" id="modal-content-contact-desktop">
+            <!-- Modal content -->
+            <form class="modal-content-contact" id="modal-content-contact-desktop">
                 <p id="contact-title">Contact<span class="close">&times;</span></p>
-                <input type="text" id="first-name" placeholder="   First Name" required>
-                <input type="text" id="last-name" placeholder="   Last Name" required>
-                <input type="email" id="email-input" placeholder="   Email address" required>
-                <textarea id="textarea-contact" placeholder="   Message" name="message-text"></textarea>
-                <input type="button" id="submit-button" value="Submit">
-            </div>
 
+                <p id="name-legend" class="legend">Name*</p>
+                <input type="text" id="first-name" required>
+                <input type="text" id="last-name" required>
+
+                <p id="first-name-legend" class="legend">First Name</p>
+                <p id="last-name-legend" class="legend">Last Name</p>
+
+                <p id="email-legend" class="legend">E-mail Address*</p>
+                <input type="email" id="email-input" required>
+
+                <p id="subject-legend" class="legend">Subject*</p>
+                <input type="text" id="subject-input" required>
+
+                <p id="message-legend" class="legend">Message*</p>
+                <textarea id="message" name="message-text" required></textarea>
+
+                <input type="button" id="submit-button" value="Submit">
+
+            </form>
         </div>
 
 
-<script src="js/main.js"></script>
-<script src="js/main2.js"></script>
+
+    <footer>
+        <div id="footer">
+            <img src="img/logo.png">
+            <div class="footer-social-icons">
+                <div><a href="https://www.facebook.com/jonasfmenke/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://www.instagram.com/jonasfmenke/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://www.youtube.com/user/VonFriedeman" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://open.spotify.com/artist/3Tn4HDV6T6jlgARWd8JupQ" target="_blank"><i class="fa fa-spotify" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://itunes.apple.com/us/artist/jonas-f-menke/1086090753" target="_blank"><i class="fa fa-apple" aria-hidden="true"></i>
+
+
+
+                </a></div>
+            </div>
+            <p>Copyright KEA MMD, 2017</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
 </body>
 
 </html>

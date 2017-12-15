@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#c4a071">
+    <meta name="theme-color" content="#bd9e6e">
     <link rel="icon" sizes="192x192" href="img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand" rel="stylesheet">
     <!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
@@ -14,70 +14,142 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="background-image-about">
+<body id="index-body">
+    <div class="background-image background-image-about">
         <header class="flex-menu">
             <div class="flex-logo-menulabel">
+                <a href="index.html"><img id="logo" src="img/logo.png" alt="Jonas F. Menke logo"></a>
                 <label for="m">&#9776;</label>
-                <a href="index.html"><img id="logo" src="img/logo.png"></a>
+
             </div>
             <nav class="nav navbar">
                 <input type="checkbox" id="m">
-                <a href="music.html">Music</a>
-                <a href="https://www.youtube.com/user/VonFriedeman">Videos</a>
-                <a href="concerts.html">Concerts</a>
-                <a href="about.html" class="active-page">About</a>
-                <a id="myBtn">Contact</a>
+                <div id="dropdown">
+                    <!--                    <div class="coverbackground"></div>-->
+                    <a href="music.html">Music</a>
+                    <a href="https://www.youtube.com/user/VonFriedeman" target="_blank">Videos</a>
+                    <a href="concerts.html">Concerts</a>
+                    <a href="about.html" class="active-page">About</a>
+                    <a id="myBtn">Contact</a>
+                </div>
             </nav>
         </header>
 
-        <div class="title-about" id="title-about-desktop">
+        <div class="title-about" id="title-desktop">
             <div>
-                <p>Curious about Jonas' story?</p>
+                <p class="main-text" id="main-text-desktop">Who am I?</p>
             </div>
-            <div class="arrow bounce">
-                <i class="fa fa-chevron-down fa-3x" aria-hidden="true"></i>
+            <div class="arrow arrow-about bounce">
+                <i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i>
             </div>
         </div>
 
 
     </div>
 
-    <main id="main-about">
-        <div class="first-box-about main-about-box main-about-box-desktop">
-            <div><img src="img/about-box1.jpg"></div>
+    <main>
+        <div class="main-about-box main-about-box-desktop scroll-here">
+            <div><img id="about-child-guitar" src="img/about/jonas1.jpg" alt="child with guitar"></div>
             <div>
                 <div class="about-text">
-                    <p>Lorem Ipsum</p>
-                    <p>Lorem ipsum dolor sit amet, equidem reprimique ad quo, eu duo ipsum semper denique, mei an eleifend similique. Nec probo nusquam civibus ei, eum ne commodo sapientem. Eos eu deleniti gloriatur maiestatis, ad eum nostro vivendum accommodare. Ut maiestatis referrentur mea, viris ullamcorper pro ne, ea nec dicit alterum salutandi. No sit reque munere. Ei eos</p>
+                    <h1 id="about-h1-1st-title" class="h1-h3">The Very Beginning</h1>
+                    <h3 id="about-h1-1st-subtitle" class="h1-h3">The guitar</h3>
+
+                    <p>The story begins in <em>Hamburg</em>, north part of <em>Germany</em>. Who said forced love stories do not have happy endings? While playing with toys, like any other kid, my father brought to me one day a <span>guitar</span>. I didn’t have much choice, because of my conformable behavior.</p><br>
+
+                    <p>Well, we don’t have to wait until the beginning of the good part of the love story. The gift was followed by <em>ten years of musical education</em>. I started loving every minute of it. I couldn’t just practice it alone. At the age of 8 I thought it was time to join forces with two other boys and start the band “Girls-free-zone”.
+                    </p>
+
                 </div>
             </div>
         </div>
-        <div class="second-box-about main-about-box main-about-box-desktop">
-            <div></div>
-            <div><img src="img/about-box2.jpg"></div>
-        </div>
-        <div class="third-box-about main-about-box main-about-box-desktop">
-            <div><img src="img/about-box1.jpg"></div>
-            <div></div>
+        <div class="main-about-box main-about-box-desktop">
+
+            <div>
+                <div class="about-text">
+                    <h1 class="h1-h3">The Middle Age</h1>
+                    <h3 class="h1-h3">The popularity</h3>
+
+                    <p>After two years I knew I had made a mistake. Girls started to become friendly, irritated by the band’s neglection. I got in another band of German Pop-Rock, singing about the problems of being a kid. It was a tough life and it deserved some songs.</p><br>
+
+                    <p>I always liked diversity. At 13 years old I joined a <em>metal-core</em> band. 4 years of making music for the cool kids that I hanged out with, following the local trends. All-time-low had a big impact on me, so I changed the style to more punk. I wanted to target more people than before and played punk covers, while playing around and creating new original songs.
+
+                    </p>
+
+                </div>
+            </div>
+            <div><img id="about-child-2nd" src="img/about/jonas2.jpg" alt="young Jonas F. Menke"></div>
         </div>
 
+
+        <div class="main-about-box main-about-box-desktop">
+            <div><img id="about-jonas-now" src="img/about/jonas3.jpg" alt="Jonas F. Menke playing the guitar and singing"></div>
+            <div>
+                <div class="about-text">
+                    <h1 class="h1-h3">The Present</h1>
+                    <h3 class="h1-h3">Jonas F. Menke</h3>
+
+                    <p>The story is almost close to the present. I, Jonas F. Menke, relocated in sunny Copenhagen at the age of 21 and decided to be the change in the music industry that I dreamed of. I want to become a popular singer and songwriter, while playing his acoustic guitar. </p><br>
+
+
+                    <p>There is a gap that I am trying to fill in the music industry, and that is the genre I play: <em>indie-pop</em>. Even though I want to make a living out of music, the reason why it keeps me going is that <em>THIS IS HAPPINESS TO ME.</em>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+
+<!-- MODAL FOR CONTACT -->
 
         <div id="myModal" class="modal">
             <!-- Modal content -->
-            <div class="modal-content-contact" id="modal-content-contact-desktop">
+            <form class="modal-content-contact" id="modal-content-contact-desktop">
                 <p id="contact-title">Contact<span class="close">&times;</span></p>
-                <input type="text" id="first-name" placeholder="   First Name" required>
-                <input type="text" id="last-name" placeholder="   Last Name" required>
-                <input type="email" id="email-input" placeholder="   Email address" required>
-                <textarea id="textarea-contact" placeholder="   Message" name="message-text"></textarea>
+
+                <p id="name-legend" class="legend">Name*</p>
+                <input type="text" id="first-name" required>
+                <input type="text" id="last-name" required>
+
+                <p id="first-name-legend" class="legend">First Name</p>
+                <p id="last-name-legend" class="legend">Last Name</p>
+
+                <p id="email-legend" class="legend">E-mail Address*</p>
+                <input type="email" id="email-input" required>
+
+                <p id="subject-legend" class="legend">Subject*</p>
+                <input type="text" id="subject-input" required>
+
+                <p id="message-legend" class="legend">Message*</p>
+                <textarea id="message" name="message-text" required></textarea>
+
                 <input type="button" id="submit-button" value="Submit">
-            </div>
+
+            </form>
         </div>
     </main>
 
+    <footer>
+        <div id="footer">
+            <img src="img/logo.png">
+            <div class="footer-social-icons">
+                <div><a href="https://www.facebook.com/jonasfmenke/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://www.instagram.com/jonasfmenke/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://www.youtube.com/user/VonFriedeman" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://open.spotify.com/artist/3Tn4HDV6T6jlgARWd8JupQ" target="_blank"><i class="fa fa-spotify" aria-hidden="true"></i>
+                </a></div>
+                <div><a href="https://itunes.apple.com/us/artist/jonas-f-menke/1086090753" target="_blank"><i class="fa fa-apple" aria-hidden="true"></i>
 
 
+
+                </a></div>
+            </div>
+            <p>Ioana Vladau Babii, Eduard Florentin Brotac, Charlene Marteyn<br>Copyright KEA MMD, 2017</p>
+        </div>
+    </footer>
 
     <!--
            <div id="w3-slideshow" class="w3-content w3-display-container">
