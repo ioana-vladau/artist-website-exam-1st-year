@@ -1,3 +1,5 @@
+//fetch the concerts from the REST endpoint
+
 function getConcerts() {
     fetch("http://ioanavladau.com/wp-exam/wp-json/wp/v2/concerts?_embed")
         .then(res => res.json())
@@ -5,11 +7,16 @@ function getConcerts() {
 }
 
 
+
+
 function showConcerts(data) {
     //console.log(data);
     let list = document.querySelector("#list");
     let template = document.querySelector("#concertTemplate").content;
     var index = 0;
+
+
+    //loop function - for every concert, clone the nodes .year, .month etc and populate them with the data taken from WP
 
     data.forEach(function (theConcert) {
         console.log(theConcert);
@@ -32,6 +39,8 @@ function showConcerts(data) {
         let emptyP = clone.querySelector(".empty-p");
 
 
+        //if price is 0, then do not display "price: 0 DKK", but rather check if it is with tickets or if you pay at the entrance
+
         if (theConcert.acf.price == 0) {
             priceFree.textContent = "Free";
             pricePP.style.display = "none";
@@ -51,6 +60,8 @@ function showConcerts(data) {
         //country.textContent = theConcert.acf.country;
         day.textContent = theConcert.acf.date.slice(6);
 
+
+        //slice the month out of the yyyymmdd, slicing from the 4th character to the 5th inclusive
         switch (theConcert.acf.date.slice(4, 6)) {
             case "01":
                 month.textContent = "jan";
